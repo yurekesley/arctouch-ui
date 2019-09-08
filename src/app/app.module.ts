@@ -35,7 +35,6 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
       useClass: SMTHttpInterceptor,
       multi: true,
     },
-
     DatePipe,
     { provide: MAT_DATE_LOCALE, useValue: 'pt-BR' },
     { provide: DateAdapter, useClass: MomentDateAdapter, deps: [MAT_DATE_LOCALE] },
