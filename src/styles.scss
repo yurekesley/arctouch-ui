@@ -1,0 +1,93 @@
+@import "../node_modules/mdias-componentes/src/assets/tema/padrao";
+mdb-titulo  {
+    i {
+      font-size: 2.5rem;
+      margin-right: 1.0rem;
+    }
+  
+    button {
+      margin-left: 5px !important;
+    }
+}
+  
+i {
+    font-style: normal;
+}
+
+.cabecalho-tabela {
+  position: sticky;
+  position: -webkit-sticky;
+  background: initial;
+  top: 0;
+} 
+.cabecalho-fixo {
+  .mat-table {
+      margin-top: 57px;
+      .mat-header-row  {
+          width: calc(100% - 50px);
+          position: absolute;
+          top: 65px;
+      }
+  }
+}
+
+
+// Resolver problema no firefox.
+.barra {
+  background-color: #005daa;
+}
+
+.criarExame {
+  .mdias-modal {
+      .container {
+          .row {
+              mdias-container {
+                  .titulo {
+                      height: 0px !important;
+                  }
+              }
+          }
+      }
+  }
+}
+
+.modal-medio {
+  width: 600px;
+  .mdias-modal {
+    width: 600px;
+  }
+}
+
+.modal-grande {
+width: 90%;
+.mdias-modal {
+  width: 90%;
+}
+}
+
+mat-header-row {
+  z-index: 1;
+  background: #fff;
+}
+mat-row {
+  z-index: -1;
+}
+
+mdb-titulo > .material-icons {
+  font-size: 40px;
+}
+
+mdb-footer  {
+  footer {
+
+    img {
+      display: none;
+    }
+    p {
+      display: none;
+    }   
+  }
+
+}
+
+

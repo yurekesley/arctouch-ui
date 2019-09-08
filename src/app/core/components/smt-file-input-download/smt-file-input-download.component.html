@@ -1,0 +1,14 @@
+<div class="file-input-download" style="text-align: left;">
+  <mat-button-toggle-group #group="matButtonToggleGroup">
+    <mat-button-toggle class="active" mat-fab color="primary" (click)="triggerFile(fileInput)"
+      [matTooltip]="nome ? nome : 'label.selecionarArquivo' | i18n " matTooltipClass="matTooltip">
+      <mat-icon>cloud_upload</mat-icon>
+    </mat-button-toggle>
+    <mat-button-toggle [ngClass]="{'active': disabled==false}" (click)="downloadArquivo()" [disabled]="disabled"
+      [matTooltip]="disabled ? '' : 'label.download'| i18n">
+      <mat-icon>cloud_download</mat-icon>
+    </mat-button-toggle>
+  </mat-button-toggle-group>
+  <input #fileInput class="none" (change)="onFileChange($event)" type="file" [accept]="accept" />
+  <span>{{nome}}</span>
+</div>

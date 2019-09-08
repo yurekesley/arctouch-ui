@@ -1,0 +1,11 @@
+<div *ngIf="item">
+  <mat-icon matTooltip="{{item.errors}}" *ngIf="item.errors">
+    error
+  </mat-icon>
+  <mat-icon *ngIf="!item.errors && !item.registroExistente">
+    done
+  </mat-icon>
+  <mat-icon *ngIf="item.registroExistente" matTooltip="Registro Existente">
+    warning
+  </mat-icon>
+</div>

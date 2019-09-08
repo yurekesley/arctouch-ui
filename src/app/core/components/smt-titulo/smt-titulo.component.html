@@ -1,0 +1,6 @@
+<mdb-titulo>
+  <i class="material-icons alinhar-a-esquerda" *ngIf="mostrarIcone">{{icone}}</i>
+  <span class="alinhar-a-esquerda">{{textoTitulo}}</span>
+  <button [id]= "idBotao" *ngIf="mostrarBotao" mat-flat-button  color="primary" class="alinhar-a-direita" (click)="acaoBotao($event)"> {{textoBotao}} </button>
+</mdb-titulo>
+

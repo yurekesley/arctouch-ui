@@ -1,0 +1,15 @@
+.none {
+    display: none;
+}
+
+.active {
+    background-color:  #005daa;
+    color: white;
+}
+
+.file-input-download {
+    border-bottom: 1px solid rgba(0,0,0,.6);
+    span {
+        margin: 1em;
+    }
+}

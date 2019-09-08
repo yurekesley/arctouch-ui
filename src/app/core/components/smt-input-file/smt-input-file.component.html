@@ -1,0 +1,8 @@
+<div class="input" (click)="triggerFile(fileInput)">
+  <button mat-fab color="primary" type="button" 
+        [matTooltip]="nome" matTooltipClass="matTooltip">
+      <mat-icon aria-label="icon-button">cloud_upload</mat-icon>
+  </button>
+  <input #fileInput class="none" (change)="onFileChange($event)" type="file"
+  [accept]="accept" />
+</div>

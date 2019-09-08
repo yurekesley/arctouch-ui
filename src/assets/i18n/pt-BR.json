@@ -1,0 +1,57 @@
+{
+
+	"SISTEMA": "ArcTouch Movie",
+	"mensagem": {
+
+	},
+
+	"label": {
+		"limpar": "Limpar", 
+		"pesquisar": "Pesquisar"
+	},
+
+	"error": {
+		"tipoArquivoNaoPermitido"	: "Tipo de arquivo não permitido.",
+		"acessoNegado": {
+			"titulo": "Autorização",
+			"mensagem": "Acesso negado."
+		},
+		"urlNaoEncontrada": {
+			"titulo": "",
+			"mensagem": "URL não encontada."
+		},
+		"erroInterno": {
+			"mensagem": "Erro Interno."
+		},
+		"erroNaoEsperado": {
+			"mensagem": "Error não esperado."
+		},
+		"conexaoRecusada": {
+			"mensagem": "Conexão recusada."
+		},
+		"redirecionamento": {
+			"titulo": "",
+			"mensagem": "Redirecionando para login."
+		},
+		"soNumero": "Somente números 0-9.",
+		"tamanhoMaximo": "Maximo de {{max}} letras.",
+		"formatoInvalido": "Formato inválido.",
+		"tipoNaoPermitido": "Tipo de arquivo não é {{tipo}}.",
+		"tiposPermitidos": "Tipos de arquivos permitidos: {{tipos}}.",
+		"pattern-numero": "Informe um valor válido.",
+		"horaInvalida": "Hora inválida.", 
+		"horaInvalidaMin": "Hora inferior a {{hora}}", 
+		"dataInvalida": "Data inválida.",
+		"dataInvalidaMin": "Data inferior a {{data}}",
+		"dataInvalidaMax": "Data superior a {{data}}",
+		"dataExtincaoMenorQueDataInicio": "Menor que Data Início.", 
+		"dataExtincaoMaiorQueDataFinal": "Maior que Data Final"
+	},
+
+	"filmes" : {
+		"proximos": {
+			"titulo" : "Próximos Filmes"
+		}
+	}
+
+}

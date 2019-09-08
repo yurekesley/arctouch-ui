@@ -1,0 +1,16 @@
+<div>
+    <mat-form-field>
+      <input 
+      matInput 
+      [id]="id" 
+      [textMask]="{mask: mask}" 
+      [required]="obrigatorio" 
+      [placeholder]="placeholder"
+      [formControl]="control" 
+      autocomplete="off">
+      <mat-error>
+        {{error(_control)}}
+      </mat-error>
+      <mat-error>{{error(_control, 'pattern', 'error.horaInvalida')}}</mat-error>
+    </mat-form-field>
+  </div>

@@ -1,0 +1,19 @@
+<div class="row">
+  <mdb-col l="12" m="12" s="12">
+    <mat-card>
+      <div class="row" style="margin-bottom: 0;">
+        <ng-content></ng-content>
+        <mdb-acoes>
+          <button *ngIf="mostrarLimpar"
+            [id] = 'idLimpar'
+            [ngStyle]="{'color':'#212121', 'background-color': 'transparent', 'box-shadow':'none', 'margin-right':'5px'}"
+            [disabled]="desabilitarLimpar" mat-stroked-button (click)="limpar.emit()">{{nomeLimpar}}</button>
+          <button *ngIf="mostrarPesquisar" 
+            [id] = 'idPesquisar'
+            [disabled]="desabilitarPesquisar" mat-flat-button color="primary"
+            (click)="pesquisar.emit()">{{nomePesquisar}}</button>
+        </mdb-acoes>
+      </div>
+    </mat-card>
+  </mdb-col>
+</div>

@@ -1,0 +1,28 @@
+<mdb-acoes>
+  <ng-content></ng-content>
+
+  <button 
+    *ngIf="mostrarLimpar"
+    [id]="idLimpar"
+    [ngStyle]="{'color':'#212121', 'background-color': 'transparent', 'box-shadow':'none', 'margin-right':'5px'}"
+    mat-stroked-button 
+    (click)="acaoLimpar($event)">
+     {{ textoLimpar }} 
+  </button>
+  <button 
+    *ngIf="mostrarCancelar"
+    [id]="idCancelar"
+    [ngStyle]="{'margin-right':'5px', 'background-color': 'rgb(239, 83, 80)'}" 
+    mat-flat-button
+    color="primary" 
+    (click)="acaoCancelar($event)">
+    {{ textoCancelar }} 
+  </button>
+  <button 
+    *ngIf="mostrarSalvar"
+    [id]="idSalvar"
+    (click)="acaoSalvar($event)"
+    mat-flat-button color="primary">
+    {{ textoSalvar }} 
+  </button>
+</mdb-acoes>

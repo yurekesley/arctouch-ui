@@ -1,0 +1,76 @@
+<mdb-container>
+  <smt-mdb-titulo mostrarIcone=true icone="search" [textoTitulo]="'filmes.proximos.titulo' | i18n">
+  </smt-mdb-titulo>
+  <mdias-filtro (pesquisar)="evento.pesquisar()" (limpar)="evento.limparFiltro()">
+    <mdias-titulo [valor]="'filmes.proximos.titulo' | i18n"></mdias-titulo>
+    <form id="FORM_PROXIMOS" novalidate [formGroup]="evento.formularioPesquisa" (keyup.enter)="evento.pesquisar()">
+
+      <mdb-col l=4>
+        <mdb-autocomplete [controle]="evento.formularioPesquisa.get('descricao')" [atributoDisplay]="'valor'"
+          id="DESCICAO" [ehObrigatorio]=false [label]="traduzir('filmes.proximos.descicao')"
+          (lazy)="evento.pesquisarProximosFilmes($event)" [lista]="evento.proximosFilmes">
+        </mdb-autocomplete>
+      </mdb-col>
+
+    </form>
+  </mdias-filtro>
+
+  <smt-container *ngIf="evento.resultadoPesquisa.totalElements">
+      <mdias-titulo [valor]="traduzir('label.resultado')"></mdias-titulo>
+      <mdb-tabela [hidden]="evento.resultadoPesquisa.totalElements > 0 ? false : true" id="TABELA_REUNIAO_PESQUISA"
+        [totalDeItens]="evento.resultadoPesquisa.totalElements" [ehPaginado]="true"
+        [itensPorPagina]="evento.resultadoPesquisa.size" [ehLazy]="true" (onLazy)="evento.pesquisar($event)"
+        [lista]="evento.resultadoPesquisa.content">
+  
+        <mdb-coluna tamanho="3" [tooltip]="true" [valorCabecalho]="traduzir('reuniaoCipa.formulario.atributos.filial')"
+          [atributo]="'filial.valor'" [ordenavel]="true">
+        </mdb-coluna>
+  
+        <mdb-coluna tamanho="3" [tooltip]="true" [valorCabecalho]="traduzir('reuniaoCipa.formulario.atributos.mandato')"
+          [atributo]="'mandato.codDescricao'" [ordenavel]="true">
+        </mdb-coluna>
+  
+        <mdb-coluna tamanho="3" [tooltip]="true" [valorCabecalho]="traduzir('reuniaoCipa.formulario.atributos.inicio')"
+          [atributo]="'data'">
+          <ng-template let-item="item" let-indice="indice">
+            {{ item?.data | date:'dd/MM/yyyy HH:mm'}}
+          </ng-template>
+        </mdb-coluna>
+  
+        <mdb-coluna tamanho="3" [tooltip]="true" [valorCabecalho]="traduzir('reuniaoCipa.formulario.atributos.situacao')"
+          [atributo]="'situacao.valor'">
+        </mdb-coluna>
+  
+        <mdb-coluna tamanho="3" [tooltip]="true"
+          [valorCabecalho]="traduzir('reuniaoCipa.formulario.atributos.tipoReuniao')" [atributo]="'tipoReuniao.valor'">
+        </mdb-coluna>
+  
+        <mdb-coluna valorCabecalho="{{'label.acoes' | i18n}}" atributo="acoes">
+          <ng-template let-item="item" let-indice="indice">
+            <button mat-icon-button [matMenuTriggerFor]="menu" id="BTN_MENU_{{indice}}">
+              <mat-icon>more_vert</mat-icon>
+            </button>
+  
+            <mat-menu #menu="matMenu">
+              <button mat-menu-item (click)="evento.irParaEdicao(item.id)" id="BTN_MENU_EDITAR{{indice}}">
+                <mat-icon>create</mat-icon>
+                <span>{{'label.editar' | i18n}}</span>
+              </button>
+  
+              <button mat-menu-item (click)="evento.deletarRegistro(item.id, true)" id="BTN_MENU_DELETAR{{indice}}">
+                <mat-icon>delete</mat-icon>
+                <span>{{'label.deletar' | i18n}}</span>
+              </button>
+  
+              <button mat-menu-item (click)="evento.irParaRanking(item.id)" id="BTN_MENU_RANKING{{indice}}">
+                <mat-icon>poll</mat-icon>
+                <span>{{'eleicao-cipa.label.verRanking' | i18n}}</span>
+              </button>
+            </mat-menu>
+          </ng-template>
+        </mdb-coluna>
+      </mdb-tabela>
+    </smt-container>
+
+
+</mdb-container>
