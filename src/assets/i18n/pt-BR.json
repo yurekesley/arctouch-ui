@@ -50,7 +50,9 @@
 
 	"filmes" : {
 		"proximos": {
-			"titulo" : "Próximos Filmes"
+			"titulo" : "Próximos Filmes",
+			"generos" : "Gêneros", 
+			"tituloFilme": "Título"
 		}
 	}
 

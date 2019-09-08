@@ -1,3 +1,4 @@
+import { GeneroService } from './../../../core/services/genero.service';
 import { FilmeEvento } from './proximos.evento';
 import { Rest } from './../../../core/util/rest';
 import { Filme } from './../../../core/model/filme';
@@ -12,8 +13,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProximosComponent extends Componente<Filme> implements OnInit {
 
-  constructor(formBuilder: FormBuilder, rest: Rest) {
-    super(new FilmeEvento(formBuilder, rest));
+  constructor(formBuilder: FormBuilder, rest: Rest, generoService: GeneroService) {
+    super(new FilmeEvento(formBuilder, rest, generoService ));
   }
 
   ngOnInit() {

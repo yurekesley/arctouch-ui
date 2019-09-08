@@ -6,10 +6,18 @@
     <form id="FORM_PROXIMOS" novalidate [formGroup]="evento.formularioPesquisa" (keyup.enter)="evento.pesquisar()">
 
       <mdb-col l=4>
-        <mdb-autocomplete [controle]="evento.formularioPesquisa.get('descricao')" [atributoDisplay]="'valor'"
+        <mdb-autocomplete [controle]="evento.formularioPesquisa.get('name')" [atributoDisplay]="'name'"
           id="DESCICAO" [ehObrigatorio]=false [label]="traduzir('filmes.proximos.descicao')"
-          (lazy)="evento.pesquisarProximosFilmes($event)" [lista]="evento.proximosFilmes">
+          (lazy)="evento.consultarGeneros($event)" [lista]="evento.generos">
         </mdb-autocomplete>
+      </mdb-col>
+
+      <mdb-col l=4>
+      <mat-form-field>
+        <input smtUppercase matInput [placeholder]="traduzir('filmes.proximos.tituloFilme')"
+          formControlName="title" autocomplete="off">
+        <mat-error>{{error(evento.formularioPesquisa.get('title'))}}</mat-error>
+      </mat-form-field>
       </mdb-col>
 
     </form>
