@@ -4,7 +4,7 @@ import { Rest } from './../../../core/util/rest';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Filme } from './../../../core/model/filme';
 import { Evento } from 'src/app/core/util/evento.util';
-import { LazyEvent } from 'mdias-componentes';
+import { LazyEvent, MDBObjectUtil } from 'mdias-componentes';
 export class FilmeEvento extends Evento<Filme> {
 
     proximosFilmes: Filme[];
@@ -25,17 +25,26 @@ export class FilmeEvento extends Evento<Filme> {
         });
     }
 
-
+    public montarFiltro(): Filme {
+        const filme: Filme = new Filme();
+        filme.title = MDBObjectUtil.buscarValor(this.formularioPesquisa.value, 'title');
+        filme.generes = [];
+        const genere = MDBObjectUtil.buscarValor(this.formularioPesquisa.value, 'genero');
+        if (genere) {
+            filme.generes.push(genere);
+        }
+        return filme;
+    }
 
     public getFormularioPesquisa(): FormGroup {
         return this.formBuilder.group({
-            name: [null],
+            genero: [null],
             title: [null]
         });
     }
 
     public endpoint(): string {
-        return 'upcoming';
+        return 'proximos-filmes';
     }
 
 

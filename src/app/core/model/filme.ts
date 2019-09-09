@@ -1,3 +1,4 @@
+import { Genero } from './genero';
 import { Copy } from 'src/app/core/util/copy.util';
 import { EntidadeAuditada } from 'mdias-componentes';
 
@@ -28,6 +29,10 @@ export class Filme extends EntidadeAuditada {
     public popularity: number;
 
     public vote_count: number;
+
+    public genre_ids: number[];
+
+    public generes: any[];
 
     constructor(init: Partial<Filme> = null) {
         super();

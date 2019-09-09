@@ -52,7 +52,10 @@
 		"proximos": {
 			"titulo" : "Próximos Filmes",
 			"generos" : "Gêneros", 
-			"tituloFilme": "Título"
+			"tituloFilme": "Título", 
+			"overview": "Sinopse",
+			"release_date": "Data de Lançamento", 
+			"generes": "Gêneros"
 		}
 	}
 
