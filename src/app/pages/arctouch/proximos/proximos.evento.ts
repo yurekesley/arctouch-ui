@@ -31,7 +31,7 @@ export class FilmeEvento extends Evento<Filme> {
         filme.generes = [];
         const genere = MDBObjectUtil.buscarValor(this.formularioPesquisa.value, 'genero');
         if (genere) {
-            filme.generes.push(genere);
+            filme.generes.push(new Genero({id: genere.id}));
         }
         return filme;
     }
