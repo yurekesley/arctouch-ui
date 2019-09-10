@@ -1,9 +1,15 @@
+import { FilmeResolver } from './../../../core/resolvers/filme.resolver';
 import { DetalheFilmeComponent } from './detalhe-filme.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
-  { path: ':id', component: DetalheFilmeComponent }
+  {
+    path: ':id', component: DetalheFilmeComponent
+    , resolve: {
+      filme: FilmeResolver
+    }
+  }
 ];
 
 @NgModule({

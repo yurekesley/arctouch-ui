@@ -1,3 +1,4 @@
+import { IMAGES_URL_POSTER_TOKEN } from './core/tokens/images-url-resource.token';
 import { SMTHttpInterceptor } from './core/util/smt-interceptor.service';
 import { DatePipe } from '@angular/common';
 import { MAT_DATE_LOCALE, DateAdapter, MAT_DATE_FORMATS } from '@angular/material';
@@ -37,6 +38,7 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
     },
     DatePipe,
     { provide: MAT_DATE_LOCALE, useValue: 'pt-BR' },
+    { provide: IMAGES_URL_POSTER_TOKEN, useValue: 'https://image.tmdb.org/t/p/w500/'  },
     { provide: DateAdapter, useClass: MomentDateAdapter, deps: [MAT_DATE_LOCALE] },
     { provide: MAT_DATE_FORMATS, useValue: DataUtil.FORMATO_MAT }
   ]

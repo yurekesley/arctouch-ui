@@ -7,7 +7,7 @@ import { FormBuilder } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'smt-proximos',
+  selector: 'app-proximos',
   templateUrl: './proximos.component.html',
   styleUrls: ['./proximos.component.scss']
 })

@@ -1,15 +1,21 @@
+import { Filme } from './../../../core/model/filme';
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'smt-detalhe-filme',
+  selector: 'app-detalhe-filme',
   templateUrl: './detalhe-filme.component.html',
   styleUrls: ['./detalhe-filme.component.scss']
 })
 export class DetalheFilmeComponent implements OnInit {
 
-  constructor() { }
+  public filme: Filme;
+
+  constructor(public activatedRoute: ActivatedRoute
+  ) { }
 
   ngOnInit() {
+    this.filme = this.activatedRoute.snapshot.data.filme;
   }
 
 }
