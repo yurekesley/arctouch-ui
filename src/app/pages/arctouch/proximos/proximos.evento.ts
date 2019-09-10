@@ -21,7 +21,7 @@ export class FilmeEvento extends Evento<Filme> {
           .append('sort', 'title,desc');
       }
 
-    consultarGeneros(evento: LazyEvent) {
+    public consultarGeneros(evento: LazyEvent) {
 
         if (typeof evento.texto != 'string') {
             return;
@@ -52,7 +52,5 @@ export class FilmeEvento extends Evento<Filme> {
     public endpoint(): string {
         return 'proximos-filmes';
     }
-
-
 
 }
