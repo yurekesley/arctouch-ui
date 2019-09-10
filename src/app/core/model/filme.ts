@@ -32,7 +32,8 @@ export class Filme extends EntidadeAuditada {
 
     public genre_ids: number[];
 
-    public generes: any[];
+
+    public consultaGeneros: string;
 
     constructor(init: Partial<Filme> = null) {
         super();

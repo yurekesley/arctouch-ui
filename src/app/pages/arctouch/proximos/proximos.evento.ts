@@ -1,3 +1,4 @@
+import { HttpParams } from '@angular/common/http';
 import { Genero } from './../../../core/model/genero';
 import { GeneroService } from './../../../core/services/genero.service';
 import { Rest } from './../../../core/util/rest';
@@ -14,6 +15,12 @@ export class FilmeEvento extends Evento<Filme> {
         super(formBuilder, rest);
     }
 
+    public getParametrosPesquisa(): HttpParams {
+        return new HttpParams()
+          .append('size', String(10))
+          .append('sort', 'title,desc');
+      }
+
     consultarGeneros(evento: LazyEvent) {
 
         if (typeof evento.texto != 'string') {
@@ -28,10 +35,9 @@ export class FilmeEvento extends Evento<Filme> {
     public montarFiltro(): Filme {
         const filme: Filme = new Filme();
         filme.title = MDBObjectUtil.buscarValor(this.formularioPesquisa.value, 'title');
-        filme.generes = [];
         const genere = MDBObjectUtil.buscarValor(this.formularioPesquisa.value, 'genero');
         if (genere) {
-            filme.generes.push(new Genero({id: genere.id}));
+            filme.consultaGeneros = genere.name;
         }
         return filme;
     }
