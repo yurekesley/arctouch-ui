@@ -1,6 +1,7 @@
 import { Filme } from './../../../core/model/filme';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Rotas } from 'src/app/core/model/enum/rotas.enum';
 
 @Component({
   selector: 'app-detalhe-filme',
@@ -11,11 +12,14 @@ export class DetalheFilmeComponent implements OnInit {
 
   public filme: Filme;
 
-  constructor(public activatedRoute: ActivatedRoute
-  ) { }
+  constructor(public activatedRoute: ActivatedRoute, public router: Router  ) { }
 
   ngOnInit() {
     this.filme = this.activatedRoute.snapshot.data.filme;
+  }
+
+  voltar() {
+    this.router.navigate([Rotas.FILMES_PROXIMOS]);
   }
 
 }

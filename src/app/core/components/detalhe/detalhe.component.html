@@ -1,6 +1,7 @@
 <mat-card class="example-card">
   <mat-card-header>
-    <mat-card-title>{{filme.title}}</mat-card-title>
+      <img mat-card-avatar src="{{avatar}}">
+      <mat-card-title>{{filme.title}}</mat-card-title>
     <mat-card-subtitle>{{filme.original_title}}</mat-card-subtitle>
   </mat-card-header>
   <img mat-card-image [src]="url" >
@@ -10,6 +11,6 @@
     </p>
   </mat-card-content>
   <mat-card-actions>
-    <button mat-button>VOLTAR</button>
+    <button mat-button (click)="acaoVoltar()">VOLTAR</button>
   </mat-card-actions>
 </mat-card>
