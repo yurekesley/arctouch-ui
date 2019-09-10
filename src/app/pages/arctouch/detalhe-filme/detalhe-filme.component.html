@@ -1,1 +1,5 @@
-<app-detalhe [filme]=filme (voltar)="voltar()"></app-detalhe>
+<mdb-container>
+    <smt-mdb-titulo mostrarIcone=true icone="aspect_ratio" [textoTitulo]="'detalhe.titulo' | i18n">
+    </smt-mdb-titulo>
+    <app-detalhe [filme]=filme (voltar)="voltar()"></app-detalhe>
+  </mdb-container>
