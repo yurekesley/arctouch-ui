@@ -6,6 +6,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Filme } from './../../../core/model/filme';
 import { Evento } from 'src/app/core/util/evento.util';
 import { LazyEvent, MDBObjectUtil } from 'mdias-componentes';
+import { Rotas } from 'src/app/core/model/enum/rotas.enum';
 export class FilmeEvento extends Evento<Filme> {
 
     proximosFilmes: Filme[];
@@ -40,6 +41,10 @@ export class FilmeEvento extends Evento<Filme> {
             filme.consultaGeneros = genere.name;
         }
         return filme;
+    }
+
+    public verDetalhe(id: number): void {
+        this.rest.router.navigate([Rotas.FILMES_DETALHE, id]);
     }
 
     public getFormularioPesquisa(): FormGroup {

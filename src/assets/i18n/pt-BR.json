@@ -55,7 +55,8 @@
 			"tituloFilme": "Título", 
 			"overview": "Sinopse",
 			"release_date": "Data de Lançamento", 
-			"generes": "Gêneros"
+			"generes": "Gêneros",
+			"detalhe":"Detalhe"
 		}
 	}
 

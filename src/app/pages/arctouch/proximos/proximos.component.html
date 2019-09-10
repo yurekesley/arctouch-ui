@@ -59,9 +59,6 @@
         </ng-template>
       </mdb-coluna>
 
-      <!--
-
-      
       <mdb-coluna valorCabecalho="{{'label.acoes' | i18n}}" atributo="acoes">
         <ng-template let-item="item" let-indice="indice">
           <button mat-icon-button [matMenuTriggerFor]="menu" id="BTN_MENU_{{indice}}">
@@ -69,24 +66,14 @@
           </button>
 
           <mat-menu #menu="matMenu">
-            <button mat-menu-item (click)="evento.irParaEdicao(item.id)" id="BTN_MENU_EDITAR{{indice}}">
-              <mat-icon>create</mat-icon>
-              <span>{{'label.editar' | i18n}}</span>
-            </button>
-
-            <button mat-menu-item (click)="evento.deletarRegistro(item.id, true)" id="BTN_MENU_DELETAR{{indice}}">
-              <mat-icon>delete</mat-icon>
-              <span>{{'label.deletar' | i18n}}</span>
-            </button>
-
-            <button mat-menu-item (click)="evento.irParaRanking(item.id)" id="BTN_MENU_RANKING{{indice}}">
+            <button mat-menu-item (click)="evento.verDetalhe(item.id)">
               <mat-icon>poll</mat-icon>
-              <span>{{'eleicao-cipa.label.verRanking' | i18n}}</span>
+              <span>{{'filmes.proximos.detalhe' | i18n}}</span>
             </button>
           </mat-menu>
         </ng-template>
       </mdb-coluna>
-       -->
+
     </mdb-tabela>
   </smt-container>
 
