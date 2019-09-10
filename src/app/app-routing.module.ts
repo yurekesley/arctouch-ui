@@ -5,9 +5,10 @@ import { Rotas } from './core/model/enum/rotas.enum';
 
 const routes: Routes = [
   {
-    path: Rotas.INICIO
-    , loadChildren: './pages/inicio/inicio.module#InicioModule'
-  },
+    path: '',
+    pathMatch: 'full',
+    redirectTo:  Rotas.FILMES_PROXIMOS
+  }
 ];
 
 @NgModule({
